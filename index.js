@@ -1,6 +1,7 @@
 require('dotenv').config();
 const conn = require('./db/conn');
 const Usuario = require("./models/Usuario");
+const Jogo = require("./models/Jogo")
 
 /*conn.authenticate()
     .then(() => {
@@ -45,7 +46,27 @@ app.post("/usuarios/novo", async (req,res)=>{
 
     res.send("Usuario inserido sobre o id: " + usuario.id)
 })
+
+app.get("/jogos/novo", (req,res)=>{
+    res.sendFile(`${__dirname}/views/formJogo.html`);
+})
+
+app.post("/jogos/novo", async (req,res)=>{
+    const titulo= req.body.titulo;
+    const descricao= req.body.descricao;
+    const precoBase= req.body.precoBase;
     
+    const dadosJogo = {
+        titulo,
+        descricao,
+        precoBase,
+    }
+    const jogo = await Jogo.create(dadosJogo)
+
+    res.send("O jogo inserido sobre o id: " + jogo.id)
+})
+
 app.listen(8000, ()=>{
     console.log("O serve esta rodando na porta 8000!")
 })
+
