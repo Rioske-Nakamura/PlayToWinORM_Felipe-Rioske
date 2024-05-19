@@ -1,0 +1,12 @@
+.formulario {
+    width: 350px;
+    height: auto;
+    border: 2px solid black; /* Adicione 'solid' para especificar o estilo da borda */
+    border-radius: 20px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center; /* Correção: use 'justify-content' para centralizar horizontalmente */
+    align-items: center; /* Adicione 'align-items' para centralizar verticalmente */
+    flex-direction: column; /* Adicione 'flex-direction' para dispor os itens em coluna */
+    padding: 20px; /* Adicione algum preenchimento para afastar os elementos das bordas */
+}

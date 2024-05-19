@@ -3,7 +3,7 @@ const conn = require('./db/conn');
 const Usuario = require("./models/Usuario");
 const Jogo = require("./models/Jogo")
 
-/*conn.authenticate()
+conn.authenticate()
     .then(() => {
         console.log('Conectado ao banco de dados com sucesso');
     })
@@ -18,7 +18,6 @@ conn.sync({ force: true })
     .catch((err) => {
         console.log("Ocorreu um erro ao sincronizar/ conectar com o banco de dados: " + err);
     });
-*/
 
 const express = require("express")
 const app= express();
